@@ -1,0 +1,18 @@
+# 활용자료: "국민건강영양조사 원시자료(2024년) -	검진조사, 건강설문조사, 영양조사", 최종 수정일: 2026-02-27
+# URL: https://knhanes.kdca.go.kr/knhanes/rawDataDwnld/rawDataDwnld.do
+import pandas as pd
+
+# 2024 국민건강영양조사 sas 불러오기
+df_01 = pd.read_sas(r"d:/github/hn24_all.sas7bdat")
+
+
+# 추출한 칼럼들을 담아둘 빈 주머니(리스트)
+list = []
+
+# 데이터프레임(df_01)의 모든 열 이름들을 리스트의 형태로 가져오기 
+for i in df_01.columns.tolist():
+    list.append(i)
+    
+# 모든 칼럼 이름이 들어간 리스트 
+print(list)
+    
